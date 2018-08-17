@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">සිංහල</string>
+    <string name="navigation_drawer_open">නවිග්ගතිඔන්</string>
+    <string name="navigation_drawer_close">වැසීම</string>
+    <string name="nav_header_title">ඇන්ඩ්</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="end">end!</string>
+    <string name="nname">හෙල්ලෝ වල්ඩ්</string>
+    <string name="title_activity_language">Language</string>
+    <string name="language_selection">language selection</string>
+</resources>
