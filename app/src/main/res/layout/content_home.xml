@@ -5,15 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".Language"
-    tools:showIn="@layout/activity_alert_box">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    tools:context=".HomeActivity"
+    tools:showIn="@layout/activity_home">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/language_selection"/>
-</RelativeLayout>
 </android.support.constraint.ConstraintLayout>

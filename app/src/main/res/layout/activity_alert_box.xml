@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Language">
+    tools:context=".OtpandAlertBoxdemo">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -116,6 +116,13 @@
             android:layout_marginTop="40dp"
             android:onClick="getValue"
             android:text="get value" />
+        <Button
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:onClick="changeLanguage"
+            android:text="change language" />
     </LinearLayout>
 
 </RelativeLayout>

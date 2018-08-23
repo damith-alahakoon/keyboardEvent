@@ -12,4 +12,8 @@
     <string name="nname">හෙල්ලෝ වල්ඩ්</string>
     <string name="title_activity_language">Language</string>
     <string name="language_selection">language selection</string>
+
+    <string name="user_name">පරිශීලක නාමය</string>
+    <string name="password"> මුරපදය</string>
+    <string name="address">   ලිපිනය</string>
 </resources>
