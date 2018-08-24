@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OtpandAlertBoxdemo">
+    tools:context=".LoginActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -42,6 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="15dp"
             android:orientation="horizontal">
 
@@ -54,11 +55,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_txt_border_color"
                 android:gravity="center"
+                android:hint="X"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="1"
                 android:text=""
-                android:hint="X"
                 android:textSize="20sp" />
 
             <EditText
@@ -70,11 +71,11 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_txt_border_color"
                 android:gravity="center"
+                android:hint="X"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="1"
                 android:text=""
-                android:hint="X"
                 android:textSize="20sp" />
 
             <EditText
@@ -86,43 +87,30 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_txt_border_color"
                 android:gravity="center"
+                android:hint="X"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLength="1"
                 android:text=""
-                android:hint="X"
                 android:textSize="20sp" />
 
-            <EditText
-                android:id="@+id/otp4"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_txt_border_color"
-                android:gravity="center"
-                android:hint="X"
-                android:imeOptions="actionDone"
-                android:inputType="number"
-                android:maxLength="1"
-                android:text=""
-                android:textSize="20sp" />
         </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="100dp"
             android:onClick="getValue"
-            android:text="get value" />
-        <Button
+            android:text="get value"
+           />
 
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
             android:onClick="changeLanguage"
-            android:text="change language" />
+            android:text="change language"
+            />
     </LinearLayout>
 
 </RelativeLayout>

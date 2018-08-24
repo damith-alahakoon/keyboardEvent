@@ -4,97 +4,207 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class OtpandAlertBoxdemo extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
-    public EditText otp1, otp2, otp3, otp4;
-    public static final String TAG = "Language";
-    public String val1, val2, val3, val4, value;
+    public String val1, val2, val3, value;
+
+
+    public EditText otp1, otp2, otp3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alert_box);
+        setContentView(R.layout.activity_loging);
 
         otp1 = findViewById(R.id.otp1);
         otp2 = findViewById(R.id.otp2);
         otp3 = findViewById(R.id.otp3);
-        otp4 = findViewById(R.id.otp4);
-        otp1.setOnKeyListener(new View.OnKeyListener() {
 
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                int b = otp1.getText().length();
-                Log.d(TAG, "onClick: " + b);
-                if (otp1.getText().length() == 1) {
-                    otp2.requestFocus();
-                }
-                return false;
-            }
-        });
 
-        otp2.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                int b = otp2.getText().length();
-                Log.d(TAG, "onClick: " + b);
-                if (otp2.getText().length() == 1) {
-                    otp3.requestFocus();
-                }
-                return false;
-            }
-        });
-        otp3.setOnKeyListener(new View.OnKeyListener() {
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                int b = otp3.getText().length();
-                Log.d(TAG, "onClick: " + b);
-                if (otp3.getText().length() == 1) {
-                    otp4.requestFocus();
-                }
-                return false;
-            }
-        });
-//        otp4.setOnKeyListener(new View.OnKeyListener() {
+//        otp1.setOnKeyListener(new View.OnKeyListener() {
+//
 //            public boolean onKey(View v, int keyCode, KeyEvent event) {
-//                int b = otp4.getText().length();
-//                Log.d(TAG, "onClick: " + b);
-//                if (otp4.getText().length() == 1) {
+//                if (otp1.getText().length() == 1) {
+//                    otp2.requestFocus();
+//                }
+//                return false;
+//            }
+//        });
+//
+//        otp2.setOnKeyListener(new View.OnKeyListener() {
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                if (otp2.getText().length() == 1) {
+//                    otp3.requestFocus();
+//                }
+//                return false;
+//            }
+//        });
+//
+//        otp3.setOnKeyListener(new View.OnKeyListener() {
+//            public boolean onKey(View v, int keyCode, KeyEvent event) {
+//
+//                if (otp3.getText().length() == 1) {
 //                    hideSoftKeyboard(v);
 //                    return false;
 //                }
-//
 //                return false;
 //            }
 //        });
 
-
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        otp1.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                if (TextUtils.isEmpty(otp1.getText().toString())) {
+                    otp2.requestFocus();
+                } else {
+
+                    otp1.requestFocus();
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
+        otp2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                if (TextUtils.isEmpty(otp2.getText().toString())) {
+                    otp3.requestFocus();
+                } else {
+
+                    otp1.requestFocus();
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        otp3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                if (TextUtils.isEmpty(otp2.getText().toString())) {
+                    //hideSoftKeyboard(view);
+                } else {
+                    otp2.requestFocus();
+                }
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+
+//        otp1.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                if (s.toString().length() == 1) {
+//                    otp2.requestFocus();
+//                }
+//            }
+//        });
+//
+//        otp2 = findViewById(R.id.otp2);
+//        otp2.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                if (s.toString().length() == 1) {
+//                    otp3.requestFocus();
+//                }
+//
+//                if (s.toString().length() == 0) {
+//                    otp1.requestFocus();
+//                }
+//            }
+//        });
+//
+//
+//        otp3.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                if (s.toString().length() == 0) {
+//                    otp2.requestFocus();
+//                }
+//            }
+//        });
+
     }
+
+    public void hideSoftKeyboard(View view) {
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
+    }
+
 
     private void warningColorChange() {
         otp1.setBackgroundResource(R.color.warning_color);
         otp2.setBackgroundResource(R.color.warning_color);
         otp3.setBackgroundResource(R.color.warning_color);
-        otp4.setBackgroundResource(R.color.warning_color);
+
     }
 
     public void getValue(View view) {
@@ -102,9 +212,9 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
         val1 = otp1.getText().toString();
         val2 = otp2.getText().toString();
         val3 = otp3.getText().toString();
-        val4 = otp4.getText().toString();
-        if (!(val1.equals("")) && (!val2.equals("")) && (!val3.equals("")) && (!val4.equals(""))) {
-            value = val1 + val2 + val3 + val4;
+
+        if (!(val1.equals("")) && (!val2.equals("")) && (!val3.equals(""))) {
+            value = val1 + val2 + val3;
             Toast.makeText(this, "value is : " + value, Toast.LENGTH_SHORT).show();
             showmessgebox("3466", "money", "Rs 900", "Rs 789", "damith");
 
@@ -126,11 +236,7 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
                 warningColorChange();
                 return;
             }
-            if (val4.equals("")) {
-                otp4.setError("Empty");
-                otp4.requestFocus();
-                return;
-            }
+
 
             Toast.makeText(this, "OTP not valid", Toast.LENGTH_SHORT).show();
         }
@@ -138,10 +244,6 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
 
     }
 
-    public void hideSoftKeyboard(View view) {
-        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_IMPLICIT_ONLY);
-    }
 
     private void showmessgebox(final String accountRef, final String paymentType, String total, final String amount, String username) {
 
@@ -168,7 +270,7 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 int b = pwd_key1.getText().length();
-                Log.d(TAG, "onClick: " + b);
+
                 if (pwd_key1.getText().length() == 1) {
                     pwd_key2.requestFocus();
                 }
@@ -179,7 +281,7 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 int b = pwd_key2.getText().length();
-                Log.d(TAG, "onClick: " + b);
+
                 if (pwd_key2.getText().length() == 1) {
                     pwd_key3.requestFocus();
                 }
@@ -190,7 +292,7 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 int b = pwd_key3.getText().length();
-                Log.d(TAG, "onClick: " + b);
+
                 if (pwd_key3.getText().length() == 1) {
                     pwd_key4.requestFocus();
                 }
@@ -201,7 +303,7 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 int b = pwd_key4.getText().length();
-                Log.d(TAG, "onClick: " + b);
+
                 if (pwd_key4.getText().length() == 1) {
                     hideSoftKeyboard(v);
                 }
@@ -210,8 +312,8 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
         });
 
 
-       // final TextView transactionCodeLabel = new TextView(this);
-       // transactionCodeLabel.setText("Please enter the transaction PIN to confirm the transaction");
+        // final TextView transactionCodeLabel = new TextView(this);
+        // transactionCodeLabel.setText("Please enter the transaction PIN to confirm the transaction");
 
 
         alertDialog.setTitle("Transaction Confirmation");
@@ -247,7 +349,6 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
                         String pwd4 = pwd_key4.getText().toString();
 
                         final String pws = pwd1 + pwd2 + pwd3 + pwd4;
-                        Log.d(TAG, "showmessgebox: pws" + pws);
 
 
                         Toast.makeText(getApplicationContext(), "Payment Successful pws " + pws, Toast.LENGTH_LONG).show();
@@ -258,8 +359,9 @@ public class OtpandAlertBoxdemo extends AppCompatActivity {
         alertDialog.show();
 
     }
-    public void changeLanguage(View view){
-        startActivity(new Intent(this, sinhalaActivity.class));
+
+    public void changeLanguage(View view) {
+        startActivity(new Intent(this, HomeActivity.class));
 
     }
 }

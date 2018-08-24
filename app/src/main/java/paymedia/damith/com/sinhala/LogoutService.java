@@ -17,7 +17,7 @@ public class LogoutService extends BroadcastReceiver {
             wasScreenOn = true;
             Log.d("LogoutServiceScreen","screenOff");
 
-            Intent loginIntent = new Intent(context,OtpandAlertBoxdemo.class);
+            Intent loginIntent = new Intent(context,LoginActivity.class);
             context.startActivity(loginIntent);
             //finish();
             Log.d("onPause","onPauseScreenOff");

@@ -14,8 +14,8 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".OtpandAlertBoxdemo"
-            android:label="@string/title_activity_language"
+            android:name=".LoginActivity"
+            android:label="demo app"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,11 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sinhalaActivity"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_sinhala"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".TestTimeOutActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
